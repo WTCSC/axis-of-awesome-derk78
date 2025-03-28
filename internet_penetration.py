@@ -29,10 +29,10 @@ data = {
 df = pd.DataFrame(data)
 
 plt.figure(figsize=(12, 6))
-bars = plt.barh(df["Country"], df["Internet Penetration (%)"], color="skyblue")
+bars = plt.pie(df["Internet Penetration (%)"], labels=df["Country"], startangle=140, autopct='%1.1f%%')
+#average_penetration = df.groupby("Region")["Internet Penetration(%)"].mean()
 
 plt.xlabel("Internet Penetration (%)")
-plt.ylabel("Country")
 plt.title("Internet Penetration by Country")
 
 plt.show()
